@@ -9,3 +9,4 @@ let commonPage = new CommonPage();
 Given("I visit {string}", (url) => {
     commonPage.visitLink(url);
    });
+
