@@ -8,24 +8,23 @@ let loginPage = new LoginPage();
 
 Given("I type standar user in login page", () => {
     loginPage.typeStandarUser()
-   });
+});
   
 Given("I type the correct password in login page", () => {
     loginPage.typeCorrectPassword()
-   });
+});
 
-   Given("I check the url doesn't contain inventory", () => {
+Given("I check the url doesn't contain inventory", () => {
     loginPage.checkUrlIsNotMainPage()
-   });
+});
 
-   Given("I click on the login button", () => {
+Given("I click on the login button", () => {
     loginPage.clickLoginButton()
-   });
+});
 
-
-   Given("I login with valid user and password", () => {
-    loginPage.correctLogin()()
-   });
+Given("I login with valid user and password", () => {
+    loginPage.correctLogin()
+});
 
 
 

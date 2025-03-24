@@ -11,9 +11,14 @@ it('login happy path', () => {
     cy.get('[data-test="login-button"]').click()
     cy.url().should('include','inventory.html')
     cy.get('[data-test="primary-header"]').should('be.visible').and('contain','Swag Labs')
-
-
-
 })
 
+it('login locked_out_user', () => {
+    cy.get('[data-test="username"]').type('locked_out_user')
+    cy.get('[data-test="password"]').type('secret_sauce')
+    cy.get('[data-test="primary-header"]').should('not.exist')
+    cy.get('[data-test="login-button"]').click()
+   // cy.url().should('include','inventory.html')
+ //   cy.get('[data-test="primary-header"]').should('be.visible').and('contain','Swag Labs')
+})
 })
