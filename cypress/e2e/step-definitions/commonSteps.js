@@ -26,6 +26,11 @@ Given("I type in the text box with data test {string} the text {string}", (texBo
     commonPage.typeInTextBoxByDataTest(texBoxByDataText, text);
 });
 
+Given("I check that the element with data-test {string} contain the text {string}", (elementByDataTest, text) => {
+    commonPage.checkElementContains(elementByDataTest, text);
+   });
+   
+
 Given("I can see in the error box with data test {string} the text {string}", (errorBox, text) => {
         commonPage.checkErrorBox(errorBox, text);
 });
@@ -39,8 +44,23 @@ Given ("I check body contain {string}", (text)=> {
 
 Given ("I check body not contain {string}", (text) => {
     commonPage.bodyNotContainText(text)
+})
 
+Given ("I click on an element with the text {string}", (elementByText) => {
+    commonPage.clickElementByContent(elementByText)
 })
 
 
+Given ("I check that the body should {string} the text {string}", (assertion, text) => {
+    commonPage.checkBodyText(assertion,text)
+})
+
+// Función para testear accesibilidad
+Given('I test the accesibility in all the screen', () => {
+    commonPage.testAccesibilityInScreen()
+})
+  
+  Given('I test the accesibility on the element with locator {string}', (elementLocator) => {
+    commonPage.testAccesibilityOnElement(elementLocator)
+})
 

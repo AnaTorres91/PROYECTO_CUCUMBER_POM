@@ -31,7 +31,9 @@ export class CommonPage{
     typeElementByDataTest(elementByDataTest, text) {
         this.getElementByDataTest(elementByDataTest).type(text)
     }
-    
+    clickElementByContent (elementByText) {
+        cy.contains(elementByText).click()
+    }
     checkElementContains (elementByDataTest, text) {
         this.getElementByDataTest(elementByDataTest).should('contain', text)
     }
@@ -64,5 +66,27 @@ export class CommonPage{
     bodyNotContainText(text) {
         cy.get('body').should('not.contain', text)
     }
+
+    checkBodyText(assertion, text) {
+        cy.get('body').should(assertion, text)
+
+       }
+
+    getElementByClass(className) {
+    return cy.get(`[class = "${className}"]`)
+      }
+        
+
+
+
+/// Función para testear accesibilidad
+    testAccesibilityInScreen () {
+        cy.injectAxe();
+        cy.checkA11y();
+    }
+
+    testAccesibilityOnElement (elementLocator) {
+        cy.injectAxe();
+        cy.checkA11y(elementLocator)
+    }
 }
-   

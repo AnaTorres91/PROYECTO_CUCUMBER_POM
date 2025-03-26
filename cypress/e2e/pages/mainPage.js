@@ -5,4 +5,7 @@ export class MainPage extends CommonPage{
     checkUrlMainPage() {
         cy.url().should('include','inventory')
     }
+
+
+
 }

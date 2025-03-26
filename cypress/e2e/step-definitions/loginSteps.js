@@ -2,6 +2,7 @@ import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
 
 // Clases importadas
 import { LoginPage } from "../pages/loginPage"
+const acceptedUserNames = ['standard_user', 'locked_out_user', 'problem_user', 'performance_glitch_user', 'error_user', 'visual_user']
 
 //Instancias de clase
 let loginPage = new LoginPage();
@@ -26,6 +27,9 @@ Given("I login with valid user and password", () => {
     loginPage.correctLogin()
 });
 
+Given('I check all usernames', () => {
+    loginPage.chekAcceptedUsernames()
+})
 
 
 
