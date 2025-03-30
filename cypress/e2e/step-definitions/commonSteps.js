@@ -29,7 +29,10 @@ Given("I type in the text box with data test {string} the text {string}", (texBo
 Given("I check that the element with data-test {string} contain the text {string}", (elementByDataTest, text) => {
     commonPage.checkElementContains(elementByDataTest, text);
    });
-   
+
+Given("I check that the element with data-test {string} should {string}", (elementByDataTest, assertion) => {
+    commonPage.checkElementBydataTest(elementByDataTest, assertion);
+   });
 
 Given("I can see in the error box with data test {string} the text {string}", (errorBox, text) => {
         commonPage.checkErrorBox(errorBox, text);
@@ -45,11 +48,15 @@ Given ("I check body contain {string}", (text)=> {
 Given ("I check body not contain {string}", (text) => {
     commonPage.bodyNotContainText(text)
 })
-
+Given("I Check that the body should {string} the text {string}", (assertion, text) => { 
+    commonPage.checkBodyText(assertion, text);
+   });
 Given ("I click on an element with the text {string}", (elementByText) => {
     commonPage.clickElementByContent(elementByText)
 })
-
+Given("I click on the element with data-test {string}", (elementDataTest) => {
+    commonPage.clickElementByDataTest(elementDataTest);
+  });
 
 Given ("I check that the body should {string} the text {string}", (assertion, text) => {
     commonPage.checkBodyText(assertion,text)

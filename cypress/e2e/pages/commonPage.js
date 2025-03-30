@@ -5,23 +5,23 @@ export class CommonPage{
     }
     checkUrlnotInclude(endpoint) {
         cy.url().should('not.include', endpoint);
-      }
+    }
     
-      checkUrlInclude(endpoint) {
+    checkUrlInclude(endpoint) {
         cy.url().should('include', endpoint);
-      }
+    }
     
-      clickButtonByDataTest(buttonByDataTest) {
+    clickButtonByDataTest(buttonByDataTest) {
         cy.get(`[data-test="${buttonByDataTest}"]`).click();
-      }
+    }
     
-      typeInTextBoxByDataTest (texBoxByDataText, text) {
+    typeInTextBoxByDataTest (texBoxByDataText, text) {
         cy.get(`[data-test="${texBoxByDataText}"]`).type(text);
-       }
+    }
     
-       getElementByDataTest (elementByDataTest) {
+    getElementByDataTest (elementByDataTest) {
         return cy.get(`[data-test="${elementByDataTest}"]`)
-       }
+    }
 
 
     clickElementByDataTest(elementByDataTest) {
@@ -31,9 +31,11 @@ export class CommonPage{
     typeElementByDataTest(elementByDataTest, text) {
         this.getElementByDataTest(elementByDataTest).type(text)
     }
+
     clickElementByContent (elementByText) {
         cy.contains(elementByText).click()
     }
+
     checkElementContains (elementByDataTest, text) {
         this.getElementByDataTest(elementByDataTest).should('contain', text)
     }
@@ -50,11 +52,14 @@ export class CommonPage{
         cy.get('inputbutton').contain(text).click()
     }
 
-   
     checkErrorBox (errorBox, text) {
        cy.get(`[data-test="${errorBox}"]`).should('contain',text)
-       }
-    
+    }
+
+    checkElementBydataTest (elementDataTest, assertion) {
+        this.getElementByDataTest(elementDataTest).should(assertion)
+    }
+
     allUsers (text) {
         cy.get('[data-test="login-credentials"]').should('contain', text)
     }
@@ -70,12 +75,19 @@ export class CommonPage{
     checkBodyText(assertion, text) {
         cy.get('body').should(assertion, text)
 
-       }
+    }
 
     getElementByClass(className) {
-    return cy.get(`[class = "${className}"]`)
-      }
-        
+        return cy.get(`[class = "${className}"]`)
+    }
+    
+    getElementByClass(className) {
+        return cy.get(`[class = "${className}"]`)
+    }
+    
+    getElementByAttribute(attribute, className) {
+        return cy.get(`[${attribute} = "${className}"]`)
+    }
 
 
 

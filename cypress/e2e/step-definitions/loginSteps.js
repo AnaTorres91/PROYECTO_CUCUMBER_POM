@@ -31,5 +31,30 @@ Given('I check all usernames', () => {
     loginPage.chekAcceptedUsernames()
 })
 
+Given("I type the user name {string}", (user) => {
+    loginPage.typeUser(user);
+   });
+  
+   Given("I type the password {string}", (password) => {
+    loginPage.typePassword(password);
+   });
+  
+  
+  Given("I check that the error message {string} appears", (errorMessage) => {
+    loginPage.checkErrorMessages(errorMessage);
+   });
+  
 
+  Given("I check that the element login credentials contain the all the accepted users", () => {
+    loginPage.checkElementContains("login-credentials", "standard_user");
+    loginPage.checkElementContains("login-credentials", "locked_out_user");
+    loginPage.checkElementContains("login-credentials", "problem_user");
+    loginPage.checkElementContains("login-credentials", "performance_glitch_user");
+    loginPage.checkElementContains("login-credentials", "error_user");
+    loginPage.checkElementContains("login-credentials", "visual_user");
+  });
+ 
+  Given("I login and keep the sesion for the standar_user", () => {
+    loginPage.loginKeepSession();
+  });
 
