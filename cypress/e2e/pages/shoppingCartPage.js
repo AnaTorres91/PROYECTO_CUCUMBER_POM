@@ -22,4 +22,8 @@ checkNoInventoryItemExists() {
     // Esta función tiene la versatilidad de poder hacer cualquier aserción como parámetro
     this.getElementByClass(inventoryItem).should(assertion);
   }
+
+  checkInventoryItem(itemName, itemPrice) {
+    cy.contains(`[data-test="${inventoryItem}"]`, itemName).should('contain', itemName). and('contain', itemPrice)
+  }
 }

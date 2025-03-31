@@ -27,10 +27,12 @@ Scenario: Complete checkout process with two products in the cart
     And I click on the button with data-test "continue"
     And I check that the url doesn't include the endpoint "checkout-step-one"
     And I check that the url include the endpoint "checkout-step-two"
-    And I select the first option I check the "Sauce Labs Backpack"
-    And I select the first option I check the "29.99"
-    And I select the last option I check the "Sauce Labs Onesie"
-    And I select the last option I check the "7.99"
+    And I check that the item with name "Sauce Labs Backpack" and price "29.99" appears
+    # And I select the first option I check the "Sauce Labs Backpack"
+    # And I select the first option I check the "29.99"
+    And I check that the item with name "Sauce Labs Onesie" and price "7.99" appears
+    # And I select the last option I check the "Sauce Labs Onesie"
+    # And I select the last option I check the "7.99"
     And I click on the button with data-test "finish"
     And I check that the url doesn't include the endpoint "checkout-step-two"
     Then I check that the url include the endpoint "checkout-complete"
@@ -38,6 +40,3 @@ Scenario: Complete checkout process with two products in the cart
     And  I check that the element with data-test "back-to-products" should "be.visible"
     And I click on the button with data-test "back-to-products"
     And  I check that the element with data-test "shopping-cart-badge" should "not.exist"
-
-
-# And I check shopping cart badge should  not.exist
