@@ -16,8 +16,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run Cypress main tests
-      run: npm run cy:smoke
+    - name: Run Cypress Main tests
+      run: npm run cy:main
         
       env:
         CI: true
