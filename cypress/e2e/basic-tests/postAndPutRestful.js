@@ -87,7 +87,3 @@ describe('Testing POST and PUT on Typicode', () => {
 })
 })
 
-
-// Hacer un Delete del producto recien creado
-// Comprobar que el producto ya no existe haciendo get, debería devolver este mensaje:
-// {"error":"Oject with id=ID del producto que creamos was not found."}
