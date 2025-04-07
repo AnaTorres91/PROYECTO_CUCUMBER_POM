@@ -5,7 +5,7 @@ Background:
 #Esto es equivalente al beforeEach
  Given I visit "https://www.saucedemo.com/"
  When I login with valid user and password
-
+@smoke
  Scenario: Add a product to cart from products overview
    Given  I click on the button with data-test "add-to-cart-sauce-labs-backpack"
    When I check that the element with data-test "shopping-cart-badge" contain the text "1"

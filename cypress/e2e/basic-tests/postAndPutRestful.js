@@ -38,7 +38,7 @@ describe('Testing POST and PUT on Typicode', () => {
     //     })
     // })   
 
-    // it.only('PATCH and check the response', () => {
+    // it('PATCH and check the response', () => {
     //     cy.request('PATCH', 'https://api.restful-api.dev/objects/3', 
     //       {
     //         id: "25",

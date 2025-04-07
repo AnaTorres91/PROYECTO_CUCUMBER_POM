@@ -13,7 +13,7 @@ Background:
 #     And I check the url doesn't contain inventory
 #     When I click on the login button
 #     Then I check url contain inventary
-
+@smoke
    Scenario: main page should contain all users 
       Given I have all users in the main page with the text "standard_user"
       Given I have all users in the main page with the text "locked_out_user"
@@ -24,7 +24,7 @@ Background:
 
     Scenario: Usernames
        Given I check all usernames
-   
+  @smoke 
    Scenario: Check error messages in login "Username is required"
       Given I type in the text box with data test "password" the text "secret_sauce"
       And I check that the body should "not.contain" the text "Epic sadface: Username is required"
@@ -37,7 +37,7 @@ Background:
       And I check the url doesn't contain inventory
       When I click on the login button
       Then I can see in the error box with data test "error" the text "Epic sadface: Password is required"
-
+@smoke
   Scenario: Check error messages in login "Username and password do not match any user in this service"
       Given I type in the text box with data test "username" the text "standard_user"
       And I type in the text box with data test "password" the text "secret"
