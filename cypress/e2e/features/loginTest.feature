@@ -31,7 +31,7 @@ Background:
       And I check the url doesn't contain inventory
       When I click on the login button
       Then I can see in the error box with data test "error" the text "Epic sadface: Username is required"
-
+@smoke
    Scenario: Check error messages in login "Password is required"
       Given I type in the text box with data test "username" the text "standard_user"
       And I check the url doesn't contain inventory
