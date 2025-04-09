@@ -1,3 +1,4 @@
+@regression
 Feature: Check out Process 
 
     Background: Login
