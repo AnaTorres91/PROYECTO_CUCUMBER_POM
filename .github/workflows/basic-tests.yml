@@ -1,7 +1,6 @@
 name: Cypress Basic test Tests
 
 on:
-  schedule:
   workflow_dispatch:
 
 jobs:
