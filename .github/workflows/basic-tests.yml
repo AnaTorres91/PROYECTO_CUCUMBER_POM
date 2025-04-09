@@ -1,8 +1,9 @@
 name: Cypress Basic test Tests
 
 on:
+  schedule:
+    - cron: '58 17 * * *'
   workflow_dispatch:
-
 jobs:
   cypress-basic-tests:
     runs-on: ubuntu-latest
