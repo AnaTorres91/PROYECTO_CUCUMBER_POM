@@ -1,5 +1,5 @@
 import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
-
+import 'cypress-mochawesome-reporter/cucumberSupport';
 import { ShoppingCartPage} from "../pages/shoppingCartPage"
 
 let shoppingCartPage = new ShoppingCartPage()

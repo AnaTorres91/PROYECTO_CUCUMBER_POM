@@ -1,5 +1,5 @@
 import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
-
+import 'cypress-mochawesome-reporter/cucumberSupport';
 // Clases importadas
 import { LoginPage } from "../pages/loginPage"
 const acceptedUserNames = ['standard_user', 'locked_out_user', 'problem_user', 'performance_glitch_user', 'error_user', 'visual_user']
